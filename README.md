@@ -1,6 +1,6 @@
 # README #
 
-In order to complete this kata you'll need Visual Studio 2015 or 2017 (community eddition is just enoguht)
+In order to complete this kata you'll need Visual Studio 2015 or 2017 (community eddition is just enough)
 
 ### What is this repository for? ###
 
