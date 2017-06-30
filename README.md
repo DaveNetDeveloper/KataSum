@@ -8,7 +8,7 @@ In order to complete this kata you'll need Visual Studio 2015 or 2017 (community
 
 ### How do I get set up? ###
 
-* Fork/Clone the repository
+* Fork/Clone the repository in your own repository (and share it, so it can be reviewed)
 * Have Visual Studio 2015 or 2017
 * Have Nuget package manager updated
 * Open summer.sln
