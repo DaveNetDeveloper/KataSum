@@ -23,6 +23,7 @@ namespace Summer
 
         //Constant values
         private const string Coma = ",";
+        private const string CarrierReturn = "\n";
 
         //ctors.
         public Sum() { }
@@ -51,21 +52,37 @@ namespace Summer
         {
             try
             {
-                string[] arrayNumbers = InputValues.Split(Coma.ToCharArray());
-                if (arrayNumbers?.Length > 0)
-                {
-                    foreach (string stringNumber in arrayNumbers)
-                    {
-                        Result += Convert.ToInt32(stringNumber);
-                    }
-                    return Result;
-                }
-                else throw new FormatException();
+                if (InputValues.Contains(CarrierReturn)) InputValues = InputValues.Replace(CarrierReturn, Coma);
+                return GetResultInCorrectFormat();
             }
             catch
             {
                 throw new FormatException();
             }
+        }
+
+        private int GetResultInCorrectFormat()
+        {
+            string[] arrayNumbers = InputValues.Split(Coma.ToCharArray());
+            if (arrayNumbers?.Length > 0)
+            {
+                foreach (string stringNumber in arrayNumbers)
+                {
+                    Result += Convert.ToInt32(stringNumber);
+                }
+                return Result;
+            }
+            else throw new FormatException();
+        }
+
+        private bool ContainsCarrierReturn()
+        {
+            return InputValues.IndexOf(CarrierReturn) != -1;
+        }
+
+        private string ReplaceCarrierReturnByComaSeparator()
+        {
+            return InputValues.Replace(CarrierReturn, Coma);
         }
     }
 }

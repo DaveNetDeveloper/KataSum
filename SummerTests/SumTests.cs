@@ -69,10 +69,23 @@ namespace SummerTests
         }
 
         [Test, Description("4 - Dados n valores numericos, separados por coma, los suma")]
-        public void GivenSeveralNumbersValuesReceivedWhenExecuteSumThenReturnSumResult()
+        public void GivenSeveralNumericValuesReceivedWhenExecuteSumThenReturnSumResult()
         {
             calculator.InputValues = "2 , 2 , 2"; 
             Assert.AreEqual(6, calculator.GetSum());
-        } 
+        }
+
+        [Test, Description("5 - Devolver la suma de n valores recibidos, separados por retorno de carro")]
+        public void GivenNumericValuesReceivedWithCarrierReturnSeparatorWhenExecuteSumThenReturnSumResult()
+        {
+            calculator.InputValues = "-5 \n -5";
+            Assert.AreEqual(-10, calculator.GetSum());
+        }
+        [Test, Description("5 - Devolver la suma de n valores recibidos, separados por coma o retorno de carro")]
+        public void GivenNumericValuesReceivedWithCarrierReturnAndComaSeparatorWhenExecuteSumThenReturnSumResult()
+        {
+            calculator.InputValues = "1,2 \n 3";
+            Assert.AreEqual(6, calculator.GetSum());
+        }
     }
 }
