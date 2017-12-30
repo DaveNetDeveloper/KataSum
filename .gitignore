@@ -195,3 +195,7 @@ Inno Setup/errlog.txt
 Inno Setup/DatabaseMaintenanceTool/
 RestorePoints/
 .idea/
+.vs/Summer/v15/Server/sqlite3/storage.ide-wal
+.vs/Summer/v15/Server/sqlite3/storage.ide-shm
+.vs/Summer/v15/Server/sqlite3/storage.ide
+.vs/Summer/v15/Server/sqlite3/db.lock
