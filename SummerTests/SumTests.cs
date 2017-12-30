@@ -81,11 +81,19 @@ namespace SummerTests
             calculator.InputValues = "-5 \n -5";
             Assert.AreEqual(-10, calculator.GetSum());
         }
+
         [Test, Description("5 - Devolver la suma de n valores recibidos, separados por coma o retorno de carro")]
         public void GivenNumericValuesReceivedWithCarrierReturnAndComaSeparatorWhenExecuteSumThenReturnSumResult()
         {
             calculator.InputValues = "1,2 \n 3";
             Assert.AreEqual(6, calculator.GetSum());
+        }
+
+        [Test, Description("6 - Devolver la suma de n valores recibidos, separados por coma, retorno de carro y nuevo separador")]
+        public void GivenNumericValuesReceivedWithCarrierReturnAndComaAndNewSeparatorWhenExecuteSumThenReturnSumResult()
+        {
+            calculator.InputValues = "//.\n1,2\n3.4";
+            Assert.AreEqual(10, calculator.GetSum());
         }
     }
 }
