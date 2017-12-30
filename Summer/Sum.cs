@@ -26,14 +26,21 @@ namespace Summer
         //Public method
         public int GetSum()
         {
-            if (String.IsNullOrWhiteSpace(InputValues))
+            if (String.IsNullOrWhiteSpace(InputValues)) return 0;
+            try
             {
-                return 0;
+                return ConvertStringToSingleNumber();
             }
-            else
+            catch
             {
                 throw new FormatException();
             }
+        }
+
+        //String parsing private methods 
+        private int ConvertStringToSingleNumber()
+        {
+            return Convert.ToInt32(InputValues);
         }
     }
 }

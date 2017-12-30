@@ -37,5 +37,12 @@ namespace SummerTests
             calculator = new Sum(inputValues: string.Empty);
             Assert.AreEqual(0, calculator.GetSum());
         }
+
+        [Test, Description("2 - Dado 1 solo valor, obtendremos el mismo valor.")]
+        public void GivenOneNumericValueRecievedWhenExecuteSumThenReturnSameValue()
+        {
+            calculator.InputValues = "8";
+            Assert.AreEqual(8, calculator.GetSum());
+        }
     }
 }
