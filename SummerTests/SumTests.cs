@@ -62,10 +62,17 @@ namespace SummerTests
         }
 
         [Test, Description("3 - Dados 2 valores negativos, separados por coma, los suma")]
-        public void GivenTwoNNegativeValuesReceivedWhenExecuteSumThenReturnSumResult()
+        public void GivenTwoNegativeValuesReceivedWhenExecuteSumThenReturnSumResult()
         {
             calculator.InputValues = "-5, -5";
             Assert.AreEqual(-10, calculator.GetSum());
         }
+
+        [Test, Description("4 - Dados n valores numericos, separados por coma, los suma")]
+        public void GivenSeveralNumbersValuesReceivedWhenExecuteSumThenReturnSumResult()
+        {
+            calculator.InputValues = "2 , 2 , 2"; 
+            Assert.AreEqual(6, calculator.GetSum());
+        } 
     }
 }

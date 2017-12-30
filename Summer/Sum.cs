@@ -52,7 +52,7 @@ namespace Summer
             try
             {
                 string[] arrayNumbers = InputValues.Split(Coma.ToCharArray());
-                if (arrayNumbers?.Length == 2)
+                if (arrayNumbers?.Length > 0)
                 {
                     foreach (string stringNumber in arrayNumbers)
                     {
