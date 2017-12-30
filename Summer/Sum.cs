@@ -19,6 +19,11 @@ namespace Summer
         //Public property
         public string InputValues { get; set; }
 
+        private int Result { get; set; }
+
+        //Constant values
+        private const string Coma = ",";
+
         //ctors.
         public Sum() { }
         public Sum(string inputValues) => InputValues = inputValues.Trim();
@@ -33,7 +38,7 @@ namespace Summer
             }
             catch
             {
-                throw new FormatException();
+                return SumNumbersInStringFormat();
             }
         }
 
@@ -41,6 +46,27 @@ namespace Summer
         private int ConvertStringToSingleNumber()
         {
             return Convert.ToInt32(InputValues);
+        }
+
+        private int SumNumbersInStringFormat()
+        {
+            try
+            {
+                string[] arrayNumbers = InputValues.Split(Coma.ToCharArray());
+                if (arrayNumbers?.Length > 0)
+                {
+                    foreach (string stringNumber in arrayNumbers)
+                    {
+                        Result += Convert.ToInt32(stringNumber);
+                    }
+                    return Result;
+                }
+                else throw new FormatException();
+            }
+            catch
+            {
+                throw new FormatException();
+            }
         }
     }
 }

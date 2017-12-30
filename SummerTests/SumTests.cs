@@ -19,7 +19,7 @@ namespace SummerTests
     {
         public Sum calculator;
 
-        [Test, Description("0 - Si recibimos una cadena no númerica, devolvemos FormatException.")]
+        [Test, Description("0 - Si recibimos una cadena no númerica, devolvemos FormatException")]
         public void GivenNonNumericalValueReceivedWhenExecuteSumThenReturnFormatException()
         {
             Assert.Throws<FormatException>(new TestDelegate(GetFormatException));
@@ -31,18 +31,25 @@ namespace SummerTests
             calculator.GetSum();
         }
 
-        [Test, Description("1 - Si no hay valores, recibimos una cadena vacia, devolvemos 0.")]
-        public void GivenEmptyStringRecievedWhenExecuteSumThenReturnZero()
+        [Test, Description("1 - Si no hay valores, recibimos una cadena vacia, devolvemos 0")]
+        public void GivenEmptyStringReceivedWhenExecuteSumThenReturnZero()
         {
             calculator = new Sum(inputValues: string.Empty);
             Assert.AreEqual(0, calculator.GetSum());
         }
 
         [Test, Description("2 - Dado 1 solo valor, obtendremos el mismo valor.")]
-        public void GivenOneNumericValueRecievedWhenExecuteSumThenReturnSameValue()
+        public void GivenOneNumericValueReceivedWhenExecuteSumThenReturnSameValue()
         {
             calculator.InputValues = "8";
             Assert.AreEqual(8, calculator.GetSum());
+        }
+
+        [Test, Description("3 - Dados 2 valores, separados por coma, los suma")]
+        public void GivenTwoNumericValuesReceivedWhenExecuteSumThenReturnSumResult()
+        { 
+            calculator.InputValues = "2, 2";
+            Assert.AreEqual(4, calculator.GetSum());
         }
     }
 }
