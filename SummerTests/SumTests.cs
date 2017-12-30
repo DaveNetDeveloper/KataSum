@@ -19,6 +19,15 @@ namespace SummerTests
     {
         public Sum calculator;
 
+        [SetUp]
+        public void SetUp() => calculator = new Sum();
+
+        [TearDown]
+        public void Dispose()
+        {
+            calculator = null;
+        }
+
         [Test, Description("0 - Si recibimos una cadena no númerica, devolvemos FormatException")]
         public void GivenNonNumericalValueReceivedWhenExecuteSumThenReturnFormatException()
         {
@@ -27,14 +36,14 @@ namespace SummerTests
 
         private void GetFormatException()
         {
-            calculator = new Sum(inputValues: "abc");
+            calculator.InputValues = "abc";
             calculator.GetSum();
         }
 
         [Test, Description("1 - Si no hay valores, recibimos una cadena vacia, devolvemos 0")]
         public void GivenEmptyStringReceivedWhenExecuteSumThenReturnZero()
         {
-            calculator = new Sum(inputValues: string.Empty);
+            calculator.InputValues =  string.Empty;
             Assert.AreEqual(0, calculator.GetSum());
         }
 

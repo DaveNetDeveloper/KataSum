@@ -26,7 +26,6 @@ namespace Summer
 
         //ctors.
         public Sum() { }
-        public Sum(string inputValues) => InputValues = inputValues.Trim();
 
         //Public method
         public int GetSum()
@@ -53,7 +52,7 @@ namespace Summer
             try
             {
                 string[] arrayNumbers = InputValues.Split(Coma.ToCharArray());
-                if (arrayNumbers?.Length > 0)
+                if (arrayNumbers?.Length == 2)
                 {
                     foreach (string stringNumber in arrayNumbers)
                     {
